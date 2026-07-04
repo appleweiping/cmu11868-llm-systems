@@ -1,0 +1,53 @@
+{
+  "device": "cpu",
+  "note": "CPU-scale verification of the systems techniques behind the GPU-only assignment (DeepSpeed-ZeRO+LoRA training, SGLang/RadixAttention serving). 7B-scale ZeRO and the SGLang server throughput are documented as partial.",
+  "kv_cache": {
+    "seq_len": 64,
+    "matches_full_recompute": true,
+    "max_abs_err": 3.5762786865234375e-07,
+    "full_recompute_ms": 178.085,
+    "cached_ms": 50.158,
+    "flops_full": 22896640,
+    "flops_cached": 532480,
+    "flop_reduction_x": 43.0
+  },
+  "quantization": {
+    "int8": {
+      "n_bits": 8,
+      "max_abs_err": 0.000173959881067276,
+      "rel_frobenius_err": 0.0039258087053895,
+      "float32_bytes": 1048576,
+      "packed_bytes": 264192.0,
+      "packed_compression_x": 3.9689922480620154,
+      "output_rel_err": 0.00390987005084753,
+      "linear_stored_bytes_unpacked": 266240
+    },
+    "int4": {
+      "n_bits": 4,
+      "max_abs_err": 0.0031559858471155167,
+      "rel_frobenius_err": 0.07118941843509674,
+      "float32_bytes": 1048576,
+      "packed_bytes": 133120.0,
+      "packed_compression_x": 7.876923076923077,
+      "output_rel_err": 0.07050751149654388,
+      "linear_stored_bytes_unpacked": 266240
+    }
+  },
+  "lora": {
+    "in": 256,
+    "out": 256,
+    "rank": 8,
+    "full_finetune_params": 65536,
+    "lora_params": 4096,
+    "reduction_x": 16.0,
+    "trainable_fraction": 0.0625,
+    "num_trainable_tensors": 2,
+    "num_frozen_tensors": 2,
+    "trainable_params_counted": 4096,
+    "frozen_params_counted": 65792,
+    "finetune_initial_loss": 0.667044997215271,
+    "finetune_final_loss": 0.5227691531181335,
+    "loss_reduced": true,
+    "base_weight_unchanged": true
+  }
+}
