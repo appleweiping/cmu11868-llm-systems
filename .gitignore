@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.hypothesis/
+.venv/
+venv/
+*.so
+*.o
+data/
+*.npy
+!tests/**/*.npy
+.ipynb_checkpoints/
+.DS_Store
