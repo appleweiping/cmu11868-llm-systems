@@ -1,0 +1,15 @@
+{
+  "device": "cpu",
+  "n_stages": 3,
+  "n_micro": 4,
+  "n_clock_ticks": 6,
+  "split_matches_original": true,
+  "schedule_covers_all_pairs": true,
+  "pipelined_forward_matches_reference": true,
+  "forward_max_abs_err": 4.76837158203125e-07,
+  "train_initial_loss": 3.5215229988098145,
+  "train_final_loss": 0.012725276872515678,
+  "train_elapsed_sec": 3.4286140000040177,
+  "converges": true,
+  "note": "GPipe schedule verified; pipelined forward is bit-for-bit equal to the un-pipelined model. Cross-GPU wall-clock overlap needs multiple GPUs (partial)."
+}

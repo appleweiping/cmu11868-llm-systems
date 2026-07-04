@@ -1,0 +1,23 @@
+{
+  "backend": "gloo",
+  "device": "cpu",
+  "world_size": 2,
+  "steps": 60,
+  "global_batch_size": 32,
+  "note": "Real multi-process torch.distributed data-parallel training on CPU. Gradients are all-reduced every step. GPU/NCCL wall-clock speedup is documented as partial (no GPU on this machine); correctness of synchronous SGD is verified here.",
+  "single_process": {
+    "initial_loss": 3.618152141571045,
+    "final_loss": 0.19348983466625214,
+    "elapsed_sec": 4.044319599997834,
+    "steps": 60
+  },
+  "data_parallel_rank0": {
+    "per_device_batch": 16,
+    "initial_loss": 3.640381336212158,
+    "final_loss": 0.2560124099254608,
+    "elapsed_sec": 5.407481600006577,
+    "steps": 60,
+    "param_checksum": 640.7410305896719
+  },
+  "converges": true
+}
