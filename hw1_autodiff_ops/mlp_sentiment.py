@@ -168,7 +168,29 @@ def train(epochs: int = 40, lr: float = 0.1, seed: int = 0, verbose: bool = True
     return model, history
 
 
-if __name__ == "__main__":
+def main(out_dir="results"):
+    import json
+    from pathlib import Path
+
     _, hist = train()
     final = hist[-1]
+    report = {
+        "task": "MLP sentiment classifier trained via the from-scratch autodiff engine",
+        "epochs": final[0] + 1,
+        "final_train_loss": final[1],
+        "final_train_acc": final[2],
+        "final_test_acc": final[3],
+        "history": [
+            {"epoch": e, "loss": l, "train_acc": tr, "test_acc": te} for (e, l, tr, te) in hist
+        ],
+    }
+    out = Path(out_dir)
+    out.mkdir(exist_ok=True)
+    (out / "hw1_mlp_sentiment.json").write_text(json.dumps(report, indent=2))
     print(f"\nFinal: epoch {final[0]}  train_acc {final[2]:.3f}  test_acc {final[3]:.3f}")
+    print(f"[HW1] wrote {out/'hw1_mlp_sentiment.json'}")
+    return report
+
+
+if __name__ == "__main__":
+    main()

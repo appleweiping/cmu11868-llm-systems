@@ -1,0 +1,6 @@
+# CMU 11-868 LLM Systems — runtime deps actually imported by this repo.
+# CPU-only; install into the shared csdiy venv or a fresh one.
+numpy>=2.0
+torch>=2.2          # CPU build is fine (torch==2.12.1+cpu used here)
+matplotlib>=3.8     # only for results/make_figure.py
+pytest>=8.0         # test suite

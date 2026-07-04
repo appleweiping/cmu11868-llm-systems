@@ -114,7 +114,11 @@ class Tensor:
             grads = (grads,)
         result: List[Tuple[Tensor, Tensor]] = []
         for inp, g in zip(h.inputs, grads):
-            if isinstance(inp, Tensor) and not inp.is_constant():
+            # Only propagate to graph inputs that participate in the gradient.
+            # A no-grad intermediate is not a constant (it has a History) but was
+            # created with an empty backward context, so it must not be seeded —
+            # otherwise its backward() would be called on nothing saved.
+            if isinstance(inp, Tensor) and not inp.is_constant() and inp.requires_grad:
                 result.append((inp, g))
         return result
 
