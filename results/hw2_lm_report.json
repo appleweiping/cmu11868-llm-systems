@@ -1,0 +1,68 @@
+{
+  "task": "char-level language modelling (decoder-only transformer)",
+  "n_params": 72448,
+  "vocab_size": 30,
+  "block": 32,
+  "steps": 400,
+  "final_val_loss": 0.0893,
+  "final_val_perplexity": 1.093,
+  "initial_val_loss": 3.2767,
+  "elapsed_sec": 76.6,
+  "sample": "the lazy dog. a wizard's job is to vex chumps quickly in fog. pack my box with five dozen liquor jugs. h",
+  "history": [
+    {
+      "step": 1,
+      "train_loss": 3.4793247724994023,
+      "val_loss": 3.276660689414167,
+      "val_ppl": 26.487175949132872
+    },
+    {
+      "step": 50,
+      "train_loss": 1.2860525450160134,
+      "val_loss": 1.255351175036898,
+      "val_ppl": 3.509070455938612
+    },
+    {
+      "step": 100,
+      "train_loss": 0.3451436955038849,
+      "val_loss": 0.20391346144048117,
+      "val_ppl": 1.2261920359721632
+    },
+    {
+      "step": 150,
+      "train_loss": 0.16498180229701456,
+      "val_loss": 0.11566416603582001,
+      "val_ppl": 1.1226187952989066
+    },
+    {
+      "step": 200,
+      "train_loss": 0.13553716960041773,
+      "val_loss": 0.0934068045291622,
+      "val_ppl": 1.0979082784943166
+    },
+    {
+      "step": 250,
+      "train_loss": 0.10625692384623117,
+      "val_loss": 0.09965566674176077,
+      "val_ppl": 1.104790436482508
+    },
+    {
+      "step": 300,
+      "train_loss": 0.1152551278855847,
+      "val_loss": 0.09492718665024556,
+      "val_ppl": 1.0995787881962802
+    },
+    {
+      "step": 350,
+      "train_loss": 0.11623160878597644,
+      "val_loss": 0.08952493133595299,
+      "val_ppl": 1.0936545992426916
+    },
+    {
+      "step": 400,
+      "train_loss": 0.10149604690793018,
+      "val_loss": 0.09426554288683646,
+      "val_ppl": 1.0988514993782807
+    }
+  ]
+}
