@@ -1,0 +1,74 @@
+{
+  "device": "cpu",
+  "note": "CUDA kernels (cuda/*.cu) require a GPU; benchmarked the numerically-identical fused reference vs PyTorch CPU. All outputs correct within tol.",
+  "softmax": [
+    {
+      "shape": [
+        8,
+        8,
+        64,
+        64
+      ],
+      "fused_ms": 8.7973,
+      "torch_ms": 1.3007,
+      "max_abs_err": 8.326672684688674e-17,
+      "correct": true
+    },
+    {
+      "shape": [
+        8,
+        8,
+        128,
+        128
+      ],
+      "fused_ms": 35.6899,
+      "torch_ms": 5.1437,
+      "max_abs_err": 5.551115123125783e-17,
+      "correct": true
+    },
+    {
+      "shape": [
+        16,
+        8,
+        128,
+        128
+      ],
+      "fused_ms": 70.4172,
+      "torch_ms": 6.8219,
+      "max_abs_err": 8.326672684688674e-17,
+      "correct": true
+    }
+  ],
+  "layernorm": [
+    {
+      "shape": [
+        1024,
+        256
+      ],
+      "fused_ms": 6.2963,
+      "torch_ms": 0.4865,
+      "max_abs_err": 3.552713678800501e-15,
+      "correct": true
+    },
+    {
+      "shape": [
+        2048,
+        512
+      ],
+      "fused_ms": 26.2932,
+      "torch_ms": 1.7961,
+      "max_abs_err": 3.552713678800501e-15,
+      "correct": true
+    },
+    {
+      "shape": [
+        4096,
+        512
+      ],
+      "fused_ms": 64.8287,
+      "torch_ms": 4.2221,
+      "max_abs_err": 3.552713678800501e-15,
+      "correct": true
+    }
+  ]
+}
